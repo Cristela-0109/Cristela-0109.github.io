@@ -1,0 +1,753 @@
+/* ==========================
+   ESTILOS GENERALES
+   ========================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+    /* ==========================
+     INICIO BREAKPOINT PARA MOBILE
+     ========================== */
+  
+  /* Breakpoint para dispositivos pequeños */
+  @media screen and (max-width: 768px) {
+    .header-image, .section-image {
+      width: 100vw;
+    }
+    .header {
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+    
+    .header-image {
+      width: 100vw;
+      display: block;
+    }
+    
+    .hamburger-image {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      cursor: pointer;
+    }
+    
+    /* Mejorando el diseño del menú */
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      width: 200px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    
+    .menu ul {
+      list-style: none;
+    }
+    
+    .menu ul li {
+      font-weight: 400;
+      font-size: 20px;
+      color: #555555;
+      padding: 12px 0;
+      transition: background 0.3s ease;
+      border-radius: 5px;
+    }
+    
+    .menu ul li:hover {
+      background: #f2f2f2;
+      cursor: pointer;
+    }
+    
+    /* ==========================
+       CARRUSEL
+       ========================== */
+    .carousel-container {
+      background-color: #F7F7F7;
+      height: 510px;
+      width: 100vw;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .carousel-image {
+      width: 100vw; /* Asegura que la imagen tenga el mismo ancho que el fondo del carrusel */
+      height: 100%;  /* La altura ahora será igual al contenedor */
+      object-fit: cover; /* Hace que la imagen cubra el fondo completamente, recortando si es necesario */
+      display: none; /* Inicialmente ocultamos todas las imágenes */
+    }
+    
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+    }
+    
+    .dot {
+      height: 8px;  /* Tamaño reducido de 10px a 8px */
+      width: 8px;   /* Tamaño reducido de 10px a 8px */
+      margin: 0 5px;
+      background-color: #dddddd;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    
+    .dot.active {
+      background-color: #F7F7F7;
+    }
+    /* ==========================
+     ESTILOS DEL CARRUSEL
+     ========================== */
+  
+  .carousel-image {
+    width: 100vw; /* Asegura que la imagen tenga el mismo ancho que el fondo del carrusel */
+    height: 100%;  /* La altura ahora será igual al contenedor */
+    object-fit: cover; /* Hace que la imagen cubra el fondo completamente, recortando si es necesario */
+    display: none; /* Inicialmente ocultamos todas las imágenes */
+  }
+  
+  .carousel-image.active {
+    display: block; /* Solo mostramos la imagen activa */
+  }
+  
+  /* REDES SOCIALES */
+  .icon-container {
+    width: 100vw;
+    height: 55px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .icon {
+    font-size: 30px;
+    color: #707070;
+    text-decoration: none;
+  }
+  /* FINAL REDES SOCIALES */
+  /* INFO FOTOS CASACOR */
+  .info-container {
+    width: 100vw; /* Mismo ancho que el carrusel */
+    height: 135px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .info-container p {
+    font-size: 10px;
+    color: #707070;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 2px 0;
+  }
+  /* FINAL INFO FOTOS CASACOR */
+  /* IMÁGEN SECCIÓN 2 */
+  .seccion2-img {
+    width: 100%; /* Mismo ancho que info-container */
+    height: auto; /* Escala proporcionalmente */
+    display: block; /* Evita espacios blancos debajo de la imagen */
+  }
+  /* FINAL IMÁGEN SECCIÓN 2 */
+  
+  /* IMAGEN SECCIÓN 3 */
+  .section3-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .section3-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN SECCIÓN 3 */
+  
+  /* IMAGEN SECCIÓN 4 */
+  .img-seccion4 {
+    width: 100%;
+    height: auto;
+  }
+  /* FINAL IMAGEN SECCIÓN 4 */
+  
+  /* IMAGEN TÍTULO MONOAMBIENTE */
+  .monoambientes-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .monoambientes-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN TÍTULO MONOAMBIENTE */
+  
+  /* IMAGEN TÍTULO COCINAS */
+  .cocinas-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .cocinas-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN TÍTULO COCINAS */
+  
+  /* IMAGEN TÍTULO CLOSETS */
+  .closets-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .closets-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN TÍTULO CLOSETS */
+
+    /* IMAGEN TÍTULO MIS RENDERS */
+    .mis-renders-container {
+      width: 100vw; /* Igual que el ancho de los iconos sociales */
+      display: flex;
+      justify-content: center; /* Centra la imagen */
+    }
+    
+    .mis-renders-image {
+      width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+      height: auto; /* Escala la altura proporcionalmente */
+      object-fit: contain; /* Mantiene la proporción sin recortar */
+    }
+    /* FINAL IMAGEN TÍTULO MIS RENDERS */
+  
+  /* IMAGEN TÍTULO CONTACTO */
+  .contacto-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .contacto-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN TÍTULO CONTACTO */
+  
+  /* IMAGEN TÍTULO COPYRIGHT */
+  .copyright-container {
+    width: 100vw; /* Igual que el ancho de los iconos sociales */
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+  }
+  
+  .copyright-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Escala la altura proporcionalmente */
+    object-fit: contain; /* Mantiene la proporción sin recortar */
+  }
+  /* FINAL IMAGEN TÍTULO COpyright */
+
+  /* LO QUE NO DEBE APARECER EN LA VERSIÓN MOBILE */
+  .header-image-compu {
+    display: none;
+  }
+  .nav-computadora {
+    display: none;
+  }
+  .nav-computadora ul {
+    display: none
+  }
+
+  .nav-computadora ul li {
+    display: none;
+  }
+
+  .nav-computadora ul li:last-child {
+    display: none;
+  }
+  .section1-img-compu {
+    display: none;
+  }
+    /* REDES SOCIALES */
+    .icon-container-compu {
+      display: none;
+    }
+    
+    .icon-compu {
+      display: none;
+    }
+    /* FINAL REDES SOCIALES */
+    .section2-img-compu {
+      display: none;
+    }
+    .carousel-container-compu {
+      display: none;
+    }
+    .section3-img-compu {
+      display: none;
+    }
+    .section4-img-compu {
+      display: none;
+    }
+    .section5-img-compu {
+      display: none;
+    }
+    .separador1-compu {
+      display: none;
+    }
+    .separador2-compu {
+      display: none;
+    }
+    .titulo-mis-renders {
+      display: none;
+    }
+    .separador3-compu {
+      display: none;
+    }
+    .separador4-compu {
+      display: none;
+    }
+    .separador5-compu {
+      display: none;
+    }
+    /* CARRUSEL A */
+.carousel-container-compu {
+  display: none;
+}
+
+.carousel-compu {
+  display: none;
+}
+
+.carousel-image-compu {
+  display: none;
+}
+
+.carousel-image-compu.active {
+  display: none;
+}
+
+/* Estilo para las flechas */
+.carousel-arrow {
+  display: none;
+}
+
+.carousel-arrow:hover {
+  display: none;
+}
+
+.carousel-arrow.left {
+  display: none;
+}
+
+.carousel-arrow.right {
+  display: none;
+}
+/* FINAL CARRUSEL A */  
+    
+  /* FINAL LO QUE NO DEBE APARECER EN LA VERSIÓN MOBILE */
+  }
+
+      /* ==========================
+     FINAL BREAKPOINT PARA MOBILE
+     ========================== */
+
+
+
+
+
+       /* ==========================
+     INICIO BREAKPOINT PARA COMPUTADORA
+     ========================== */
+     @media screen and (min-width: 769px) {
+    
+      /* LO QUE NO DEBE APARECER EN LA VERSIÓN COMPUTADORA */
+    .header-image, .section-image {
+      display: none;
+    }
+    .header {
+      display: none;
+    }
+    
+    .header-image {
+      display: none;
+    }
+    
+    .hamburger-image {
+      display: none;
+    }
+    
+    /* Mejorando el diseño del menú */
+    .menu {
+      display: none;
+    }
+    
+    .menu ul {
+      display: none;
+    }
+    
+    .menu ul li {
+      display: none;
+    }
+    
+    .menu ul li:hover {
+      display: none;
+    }
+    
+    /* ==========================
+       CARRUSEL
+       ========================== */
+    .carousel-container {
+      display: none;
+    }
+    
+    .carousel {
+      display: none;
+    }
+    
+    .carousel-image {
+      display: none;
+    }
+    
+    .dots {
+      display: none;
+    }
+    
+    .dot {
+      display: none;
+    }
+    
+    .dot.active {
+      display: none;
+    }
+    /* ==========================
+     ESTILOS DEL CARRUSEL
+     ========================== */
+  
+  .carousel-image {
+    display: none;
+  }
+  
+  .carousel-image.active {
+    display: none; /* Solo mostramos la imagen activa */
+  }
+  
+  /* REDES SOCIALES */
+  .icon-container {
+    display: none;
+  }
+  
+  .icon {
+    display: none;
+  }
+  /* FINAL REDES SOCIALES */
+  /* INFO FOTOS CASACOR */
+  .info-container {
+    display: none;
+  }
+  
+  .info-container p {
+    display: none;
+  }
+  /* FINAL INFO FOTOS CASACOR */
+  /* IMÁGEN SECCIÓN 2 */
+  .seccion2-img {
+    display: none;
+  }
+  /* FINAL IMÁGEN SECCIÓN 2 */
+  
+  /* IMAGEN SECCIÓN 3 */
+  .section3-container {
+    display: none;
+  }
+  
+  .section3-image {
+    display: none;
+  }
+  /* FINAL IMAGEN SECCIÓN 3 */
+  
+  /* IMAGEN SECCIÓN 4 */
+  .img-seccion4 {
+    display: none;
+  }
+  /* FINAL IMAGEN SECCIÓN 4 */
+  
+  /* IMAGEN TÍTULO MONOAMBIENTE */
+  .monoambientes-container {
+    display: none;
+  }
+  
+  .monoambientes-image {
+    display: none;
+  }
+  /* FINAL IMAGEN TÍTULO MONOAMBIENTE */
+  
+  /* IMAGEN TÍTULO COCINAS */
+  .cocinas-container {
+    display: none;
+  }
+  
+  .cocinas-image {
+    display: none;
+  }
+  /* FINAL IMAGEN TÍTULO COCINAS */
+  
+  /* IMAGEN TÍTULO CLOSETS */
+  .closets-container {
+    display: none;
+  }
+  
+  .closets-image {
+    display: none;
+  }
+  /* FINAL IMAGEN TÍTULO CLOSETS */
+
+    /* IMAGEN TÍTULO MIS RENDERS */
+    .mis-renders-container {
+      display: none;
+    }
+    
+    .mis-renders-image {
+      display: none;
+    }
+    /* FINAL IMAGEN TÍTULO MIS RENDERS */
+  
+  /* IMAGEN TÍTULO CONTACTO */
+  .contacto-container {
+    display: none;
+  }
+  
+  .contacto-image {
+    display: none;
+  }
+  /* FINAL IMAGEN TÍTULO CONTACTO */
+  
+  /* IMAGEN TÍTULO COPYRIGHT */
+  .copyright-container {
+    display: none;
+  }
+  
+  .copyright-image {
+    display: none;
+  }
+  /* FINAL IMAGEN TÍTULO COpyright */
+    /* FINAL LO QUE NO DEBE APARECER EN LA VERSIÓN COMPUTADORA */
+
+
+
+
+    
+    /* LO QUE SI DEBE APARECER EN LA VERSIÓN COMPUTADORA */
+    .header-image-compu {
+      width: 100vw;
+      height: auto;
+      display: block;
+    }
+    .nav-computadora {
+      width: 100%; /* Abarca todo el ancho de la pantalla */
+      height: 70px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+    }
+    
+    .nav-computadora ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .nav-computadora ul li {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: medium;
+      font-size: 20px;
+      color: #555555;
+      margin-right: 33px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-computadora ul li:last-child {
+      margin-right: 0;
+    }
+    
+    /* Estilo para la sección activa */
+    .nav-computadora ul li.active {
+      color: #949494;
+    }
+    
+    .section1-img-compu {
+      width: 100%;
+      height: auto;
+    }
+
+  /* REDES SOCIALES */
+  .icon-container-compu {
+    width: 100vw;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .icon-compu {
+    font-size: 30px;
+    color: #707070;
+    text-decoration: none;
+  }
+  /* FINAL REDES SOCIALES */
+  .section2-img-compu {
+    width: 100%;
+    height: auto;
+  }
+  .section3-img-compu {
+    width: 100%;
+    height: auto;
+  }
+  .section4-img-compu {
+    width: 100%;
+    height: auto;
+  }
+  .section5-img-compu {
+    width: 100%;
+    height: auto;
+  }
+  .separador1-compu {
+    width: 100%;
+    height: auto;
+  }
+  .separador2-compu {
+    width: 100%;
+    height: auto;
+  }
+  .titulo-mis-renders {
+    width: 100%;
+    height: auto;
+  }
+  .separador3-compu {
+    width: 100%;
+    height: auto;
+  }
+  .separador4-compu {
+    width: 100%;
+    height: auto;
+  }
+  .separador5-compu {
+    width: 100%;
+    height: auto;
+  }
+/* CARRUSEL */
+.carousel-container-compu {
+  width: 100%;
+  height: 537px;
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-compu {
+  position: relative;
+  width: 100%;
+  height: 537px;
+}
+
+.carousel-image-compu {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 537px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image-compu.active {
+  opacity: 1;
+}
+
+/* Estilo para las flechas */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #D0D0D0;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s;
+}
+
+.carousel-arrow:hover {
+  color: #ddd;
+}
+
+.carousel-arrow.left {
+  left: 20px;
+}
+
+.carousel-arrow.right {
+  right: 40px;
+}
+/* FINAL CARRUSEL  */  
+
+    /* FINAL LO QUE SI DEBE APARECER EN LA VERSIÓN COMPUTADORA */
+  }
+    /* ==========================
+FINAL BREAKPOINT PARA COMPUTADORA
+========================== */    
