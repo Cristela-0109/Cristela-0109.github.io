@@ -108,11 +108,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Inicializa los carruseles A, B, C y D
-  setupCarousel("carouselA", "dotsA");
-  setupCarousel("carouselB", "dotsB");
-  setupCarousel("carouselC", "dotsC");
-  setupCarousel("carouselD", "dotsD");
-  setupCarousel("carouselE", "dotsE");
+  if (document.getElementById("carouselA")) setupCarousel("carouselA", "dotsA");
+  if (document.getElementById("carouselB")) setupCarousel("carouselB", "dotsB");
+  if (document.getElementById("carouselC")) setupCarousel("carouselC", "dotsC");
+  if (document.getElementById("carouselD")) setupCarousel("carouselD", "dotsD");
+  if (document.getElementById("carouselE")) setupCarousel("carouselE", "dotsE");
+  
 });
   // FINAL CELULAR
 
@@ -163,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Inicializa los cuatro carruseles
-    initCarousel("carouselA-compu");
+    //initCarousel("carouselA-compu");
     initCarousel("carouselB-compu");
     initCarousel("carouselC-compu");
     initCarousel("carouselD-compu");
