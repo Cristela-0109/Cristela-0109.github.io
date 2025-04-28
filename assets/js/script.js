@@ -36,15 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   experienciaBtn.addEventListener('click', function() {
-    scrollAndCloseMenu(2450); // Ir a la sección Experiencia
+    scrollAndCloseMenu(2400); // Ir a la sección Experiencia
   });
 
   portafolioBtn.addEventListener('click', function() {
-    scrollAndCloseMenu(6755); // Ir a la sección Portafolio
+    scrollAndCloseMenu(5000); // Ir a la sección Portafolio
   });
 
   misRendersBtn.addEventListener('click', function() {
-    scrollAndCloseMenu(8655); // Ir a la sección Portafolio
+    scrollAndCloseMenu(7000); // Ir a la sección Portafolio
   });
 
   contactoBtn.addEventListener('click', function() {
