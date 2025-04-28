@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   portafolioBtn.addEventListener('click', function() {
-    scrollAndCloseMenu(5400); // Ir a la sección Portafolio
+    scrollAndCloseMenu(5700); // Ir a la sección Portafolio
   });
 
   misRendersBtn.addEventListener('click', function() {
